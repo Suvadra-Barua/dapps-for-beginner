@@ -1,6 +1,8 @@
 import React from 'react';
 import { Box, Button, ChakraProvider, extendTheme, Flex, Text } from '@chakra-ui/react';
-import customTheme from '../theme'
+import customTheme from '../theme';
+import { ConnectButton } from '@rainbow-me/rainbowkit';
+
 
 function Navbar() {
   return (
@@ -19,14 +21,7 @@ function Navbar() {
             <Button colorScheme="purple" variant="solid" mr={4}>
               Create Campaign
             </Button>
-            <Button
-              colorScheme="purple"
-              variant="outline"
-              _hover={{ bg: 'purple.600', color: 'white' }}
-              onClick={handleConnectWallet}
-            >
-              Connect Wallet
-            </Button>
+            <ConnectButton />
           </Flex>
         </Flex>
       </Box>
