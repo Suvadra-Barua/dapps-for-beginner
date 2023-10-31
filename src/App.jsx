@@ -128,15 +128,6 @@ async function connectWalletUsingEtherJs()
         
     </Box>
     
-    <Box
-      p={3}
-      m={3}
-      bgColor="white"
-      maxW="sm"
-    >
-        <ConnectButton accountStatus="avatar" chainStatus="icon" showBalance={true} />
-    </Box>
-    
     <ChakraProvider theme={customTheme}>
       <Center>
         <Box
