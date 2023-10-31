@@ -116,18 +116,19 @@ async function connectWalletUsingEtherJs()
 
   return (
     <>
-    <Box
-      p={3}
-      m={3}
-      bgColor="white"
-      maxW="sm"
-    >
-      <Button colorScheme="gray" size="lg" onClick={()=>connectWalletUsingEtherJs()}>
-            {buttonMessage}
-      </Button>
-        
-    </Box>
-    
+    <Center>
+      <Box
+        pb={6}
+        // m={3}
+        bgColor="white"
+        maxW="md"
+      >
+        <Button colorScheme="purple" size="md" onClick={()=>connectWalletUsingEtherJs()}>
+              {buttonMessage}
+        </Button>
+      </Box>
+    </Center>
+  
     <ChakraProvider theme={customTheme}>
       <Center>
         <Box
