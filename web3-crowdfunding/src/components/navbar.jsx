@@ -21,9 +21,10 @@ function Navbar() {
             {/* <Button colorScheme="purple" variant="solid" mr={4}>
               Home
             </Button> */}
-            <NavLink to="/createCampaign" style={({isActive})=>({
+            {/* <NavLink to="/createCampaign" style={({isActive})=>({
               colorScheme:isActive? 'purple':'ash'
-            })}>
+            })}> */}
+            <NavLink to="/createCampaign">
               <Button colorScheme="purple" variant="solid" mr={4}>
                 Create Campaign
               </Button>

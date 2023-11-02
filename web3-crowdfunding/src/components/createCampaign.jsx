@@ -9,17 +9,18 @@ import {
   extendTheme,
 } from '@chakra-ui/react';
 
-const customTheme = extendTheme({
-  styles: {
-    global: {
-      body: {
-        bg: 'coolGray.200',
-        color: 'black',
-        fontFamily: 'sans-serif',
-      },
-    },
-  },
-});
+// const customTheme = extendTheme({
+//   styles: {
+//     global: {
+//       body: {
+//         bg: 'coolGray.200',
+//         color: 'black',
+//         fontFamily: 'sans-serif',
+//       },
+//     },
+//   },
+// });
+import customTheme from "../theme";
 
 function CampaignCreation() {
   const [campaignDetails, setCampaignDetails] = useState({
