@@ -11,6 +11,7 @@ function App() {
       <Router>
         <Navbar />
           <Routes>
+            <Route path='/' element={<></>}/>
             <Route path='/createCampaign' element={<CampaignCreation />} />
           </Routes>
       </Router>

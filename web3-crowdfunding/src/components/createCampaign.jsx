@@ -58,8 +58,8 @@ function CampaignCreation() {
           />
           <Input
             name="deadline"
-            type="date"
-            placeholder="Campaign Deadline"
+            type="number"
+            placeholder="Campaign Deadline(in days)"
             value={campaignDetails.deadline}
             onChange={handleInputChange}
             mb={2}

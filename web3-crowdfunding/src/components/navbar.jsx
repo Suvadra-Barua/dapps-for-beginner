@@ -12,7 +12,9 @@ function Navbar() {
         <Flex justifyContent="space-between" alignItems="center">
           <Box>
             <Text fontSize="2xl" fontWeight="bold">
-              My Blockchain App
+              <NavLink to="/">
+               My Blockchain App
+              </NavLink>   
             </Text>
           </Box>
           <Flex>
