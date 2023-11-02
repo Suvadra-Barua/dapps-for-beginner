@@ -13,13 +13,13 @@ import customTheme from "../theme";
 import CampaignFactoryABI from "../../abi/CrowdfundingFactory.json";
 
 function CampaignCreation() {
-  const [campaignDetails, setCampaignDetails] = useState({
+  const initialCampaignDetails = {
     name: '',
-    launchDate: '',
     deadline: '',
+    launchDate: '',
     fundingGoal: '',
-  });
-
+  };
+  const [campaignDetails, setCampaignDetails] = useState({ ...initialCampaignDetails });
   const { address, isConnecting, isDisconnected } = useAccount();
   const { data, isLoading, isSuccess, write } = useContractWrite({
     address: '0x43da291E802313b3F349230D881038072708f8A6',
@@ -43,6 +43,8 @@ function CampaignCreation() {
     console.log('Campaign Details:', campaignDetails);
     await write();
     console.log(data);
+    setCampaignDetails({ ...initialCampaignDetails });
+    alert("Successful Campaign Creation");
   };
 
   return (
