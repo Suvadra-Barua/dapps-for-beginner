@@ -2,16 +2,18 @@ import { ChakraProvider, extendTheme, CSSReset, Box, Text } from '@chakra-ui/rea
 import customTheme from './theme';
 import Navbar from './components/navbar';
 import CampaignCreation from './components/createCampaign';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 function App() {
   return (
     <ChakraProvider theme={customTheme}>
       <CSSReset />
-      <Navbar />
-      <CampaignCreation />
-      <Box p={8}>
-      </Box>
-      {/* Your app content goes here */}
+      <Router>
+        <Navbar />
+          <Routes>
+            <Route path='/createCampaign' element={<CampaignCreation />} />
+          </Routes>
+      </Router>
     </ChakraProvider>
   );
 }

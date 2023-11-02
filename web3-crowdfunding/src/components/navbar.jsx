@@ -2,6 +2,7 @@ import React from 'react';
 import { Box, Button, ChakraProvider, extendTheme, Flex, Text } from '@chakra-ui/react';
 import customTheme from '../theme';
 import { ConnectButton } from '@rainbow-me/rainbowkit';
+import {NavLink} from 'react-router-dom';
 
 
 function Navbar() {
@@ -15,12 +16,16 @@ function Navbar() {
             </Text>
           </Box>
           <Flex>
-            <Button colorScheme="purple" variant="solid" mr={4}>
+            {/* <Button colorScheme="purple" variant="solid" mr={4}>
               Home
-            </Button>
-            <Button colorScheme="purple" variant="solid" mr={4}>
-              Create Campaign
-            </Button>
+            </Button> */}
+            <NavLink to="/createCampaign" style={({isActive})=>({
+              colorScheme:isActive? 'purple':'ash'
+            })}>
+              <Button colorScheme="purple" variant="solid" mr={4}>
+                Create Campaign
+              </Button>
+            </NavLink>
             <ConnectButton />
           </Flex>
         </Flex>
