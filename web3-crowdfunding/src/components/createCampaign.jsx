@@ -8,39 +8,41 @@ import {
   Button,
   extendTheme,
 } from '@chakra-ui/react';
-
-// const customTheme = extendTheme({
-//   styles: {
-//     global: {
-//       body: {
-//         bg: 'coolGray.200',
-//         color: 'black',
-//         fontFamily: 'sans-serif',
-//       },
-//     },
-//   },
-// });
+import { useAccount,useContractWrite} from 'wagmi';
 import customTheme from "../theme";
+import CampaignFactoryABI from "../../abi/CrowdfundingFactory.json";
 
 function CampaignCreation() {
   const [campaignDetails, setCampaignDetails] = useState({
     name: '',
-    deadline: '',
     launchDate: '',
+    deadline: '',
     fundingGoal: '',
   });
 
+  const { address, isConnecting, isDisconnected } = useAccount();
+  const { data, isLoading, isSuccess, write } = useContractWrite({
+    address: '0x43da291E802313b3F349230D881038072708f8A6',
+    abi: CampaignFactoryABI,
+    functionName: 'createCampaign',
+    args : [campaignDetails.name, Math.floor(new Date(campaignDetails.launchDate).getTime() / 1000), campaignDetails.deadline, campaignDetails.fundingGoal]
+  })
+
+
   const handleInputChange = (e) => {
     const { name, value } = e.target;
+    console.log(e);
+    console.log(campaignDetails);
     setCampaignDetails({
       ...campaignDetails,
       [name]: value,
     });
   };
 
-  const createCampaign = () => {
-    // Implement campaign creation logic using campaignDetails state
+  const createCampaign = async() => {
     console.log('Campaign Details:', campaignDetails);
+    await write();
+    console.log(data);
   };
 
   return (
