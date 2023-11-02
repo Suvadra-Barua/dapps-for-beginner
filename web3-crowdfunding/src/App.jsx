@@ -10,7 +10,6 @@ function App() {
       <Navbar />
       <CampaignCreation />
       <Box p={8}>
-        <Text fontSize="xl">Dark Cool Background</Text>
       </Box>
       {/* Your app content goes here */}
     </ChakraProvider>
