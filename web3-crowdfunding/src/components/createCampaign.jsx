@@ -22,7 +22,7 @@ function CampaignCreation() {
   const [campaignDetails, setCampaignDetails] = useState({ ...initialCampaignDetails });
   const { address, isConnecting, isDisconnected } = useAccount();
   const { data, isLoading, isSuccess, write } = useContractWrite({
-    address: '0x43da291E802313b3F349230D881038072708f8A6',
+    address: '0xDA69358460103bAC3d18d2959206f064dcc2B5cB',
     abi: CampaignFactoryABI,
     functionName: 'createCampaign',
     args : [campaignDetails.name, Math.floor(new Date(campaignDetails.launchDate).getTime() / 1000), campaignDetails.deadline, campaignDetails.fundingGoal]

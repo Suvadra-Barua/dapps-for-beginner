@@ -48,6 +48,46 @@
 	},
 	{
 		"inputs": [],
+		"name": "getAllCampaignDetails",
+		"outputs": [
+			{
+				"components": [
+					{
+						"internalType": "string",
+						"name": "campaignName",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "launchDate",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "deadline",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "fundingGoal",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "campaignAddress",
+						"type": "address"
+					}
+				],
+				"internalType": "struct CrowdfundingFactory.CampaignDetails[]",
+				"name": "",
+				"type": "tuple[]"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
 		"name": "getDeployedCampaigns",
 		"outputs": [
 			{
