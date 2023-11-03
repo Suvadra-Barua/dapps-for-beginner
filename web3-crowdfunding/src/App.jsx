@@ -11,9 +11,8 @@ function App() {
       <CSSReset />
       <Router>
         <Navbar />
-        <CampaignList />
           <Routes>
-            <Route path='/' element={<></>}/>
+            <Route path='/' element={<CampaignList />}/>
             <Route path='/createCampaign' element={<CampaignCreation />} />
           </Routes>
       </Router>
